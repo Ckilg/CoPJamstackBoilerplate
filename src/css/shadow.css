@@ -1,5 +1,4 @@
 :root{
-
     /* color filters sepia = saturation, saturate = saturation too, hue-rotate= hue, 
     brightness = lower brightness is darker color, contrast =more or less gray
    invert(43%) sepia(96%) saturate(1237%) hue-rotate(80deg) brightness(128%) contrast(119%) - green
@@ -8,8 +7,9 @@ invert(12%) sepia(83%) saturate(5841%) hue-rotate(244deg) brightness(87%) contra
 invert(18%) sepia(98%) saturate(2657%) hue-rotate(289deg) brightness(121%) contrast(140%) - purple
     */
     --frame-color:#000;
-    --primary-color:invert(18%) sepia(98%) saturate(2657%) hue-rotate(289deg) brightness(121%) contrast(140%); 
-    --secondary-color:#123456;
+    --primary-color:invert(18%) sepia(78%) saturate(2057%) hue-rotate(189deg) brightness(40%) contrast(100%); 
+    --secondary-color: invert(18%) sepia(78%) saturate(2057%) hue-rotate(189deg) brightness(60%) contrast(60%);
+    --background-image-color:invert(23%) sepia(76%) saturate(3237%) hue-rotate(50deg) brightness(108%) contrast(119%);
     --background-color:#123456;
     --border:2rem;
     --boxHeight:100vh;
@@ -38,7 +38,7 @@ invert(18%) sepia(98%) saturate(2657%) hue-rotate(289deg) brightness(121%) contr
     z-index: 10;
 } 
 .layer1{
-    filter: invert(18%) sepia(78%) saturate(2057%) hue-rotate(189deg) brightness(40%) contrast(100%);
+    filter: var(--primary-color);
     /* filter:var(--f-color); */
     z-index: 9;
 }
@@ -55,7 +55,9 @@ invert(18%) sepia(98%) saturate(2657%) hue-rotate(289deg) brightness(121%) contr
     height: var(--boxHeight); 
     right:calc(0.5 *(var(--border)));
 
+    
 }
+
 .bottom{
     position: absolute;
     bottom: calc(-0.4 *(var(--border)));
@@ -69,11 +71,24 @@ invert(18%) sepia(98%) saturate(2657%) hue-rotate(289deg) brightness(121%) contr
     left: 0;
 }
 .backgr{
-    filter:invert(23%) sepia(76%) saturate(3237%) hue-rotate(50deg) brightness(108%) contrast(119%);
+    filter:var(--background-image-color);
     z-index: 1;
 }
-
 .layer2{
-    filter: invert(18%) sepia(78%) saturate(2057%) hue-rotate(189deg) brightness(60%) contrast(60%);
+    filter: var(--secondary-color);
     z-index: 8;
+}
+@media only screen and (max-width: 600px) {
+    .left{
+        left:calc(-1 *(var(--border)));
+   }
+   .right{
+    right:calc(-1 *(var(--border)));
+}
+.layer1.left{
+    left:calc(-1 *(var(--border)));
+}
+.layer1.right{
+    right:calc(-5 *(var(--border)));
+}
 }
