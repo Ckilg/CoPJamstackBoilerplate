@@ -10,6 +10,7 @@ const client = contentful.createClient({
 
 client.getEntries({
     'content_type': 'card',
+    'content_type': 'shadowbox'
 })
 .then(entries => {
     const dir = './data';

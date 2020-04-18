@@ -1,0 +1,79 @@
+:root{
+
+    /* color filters sepia = saturation, saturate = saturation too, hue-rotate= hue, 
+    brightness = lower brightness is darker color, contrast =more or less gray
+   invert(43%) sepia(96%) saturate(1237%) hue-rotate(80deg) brightness(128%) contrast(119%) - green
+invert(37%) sepia(93%) saturate(7471%) hue-rotate(356deg) brightness(91%) contrast(135%) - red
+invert(12%) sepia(83%) saturate(5841%) hue-rotate(244deg) brightness(87%) contrast(153%) - blue
+invert(18%) sepia(98%) saturate(2657%) hue-rotate(289deg) brightness(121%) contrast(140%) - purple
+    */
+    --frame-color:#000;
+    --primary-color:invert(18%) sepia(98%) saturate(2657%) hue-rotate(289deg) brightness(121%) contrast(140%); 
+    --secondary-color:#123456;
+    --background-color:#123456;
+    --border:2rem;
+    --boxHeight:100vh;
+    --boxWidth:100vw;
+}
+
+.container {
+    max-width: var(--boxWidth); /*Setting the view to the size defined above*/
+    height: var(--boxHeight);
+    margin: 0 auto ;
+    padding: 1rem;
+    background-color: var(--background-color);
+}
+.borderholder{
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    border: var(--border) solid var(--frame-color);
+    z-index: 20;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+
+}
+.frame {
+    z-index: 10;
+} 
+.layer1{
+    filter: invert(18%) sepia(78%) saturate(2057%) hue-rotate(189deg) brightness(40%) contrast(100%);
+    /* filter:var(--f-color); */
+    z-index: 9;
+}
+
+.left{
+    position: absolute;    /*setting all elements for the left side to stretch to the box height & correct position*/
+    top:calc(0.5 *(var(--border)));
+    height: var(--boxHeight); 
+    left:calc(0.5 *(var(--border)));
+}
+.right{
+    position: absolute;    /*setting all elements for the right side to stretch to the box height & correct position*/
+    top:calc(0.5 *(var(--border)));
+    height: var(--boxHeight); 
+    right:calc(0.5 *(var(--border)));
+
+}
+.bottom{
+    position: absolute;
+    bottom: calc(-0.4 *(var(--border)));
+    width: var(--boxWidth);
+    left: 0;
+    max-height: calc(0.8*(var(--boxHeight)));
+}
+.roof{
+    top: calc(-0.4 *(var(--border)));
+    width: var(--boxWidth);
+    left: 0;
+}
+.backgr{
+    filter:invert(23%) sepia(76%) saturate(3237%) hue-rotate(50deg) brightness(108%) contrast(119%);
+    z-index: 1;
+}
+
+.layer2{
+    filter: invert(18%) sepia(78%) saturate(2057%) hue-rotate(189deg) brightness(60%) contrast(60%);
+    z-index: 8;
+}
