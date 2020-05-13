@@ -22,6 +22,7 @@ invert(18%) sepia(98%) saturate(2657%) hue-rotate(289deg) brightness(121%) contr
     margin: 0 auto ;
     padding: 1rem;
     background-color: var(--background-color);
+    display: block;
 }
 .borderholder{
     position: absolute;
@@ -32,7 +33,6 @@ invert(18%) sepia(98%) saturate(2657%) hue-rotate(289deg) brightness(121%) contr
     top: 0;
     left: 0;
     overflow: hidden;
-
 }
 .frame {
     z-index: 10;
@@ -45,22 +45,22 @@ invert(18%) sepia(98%) saturate(2657%) hue-rotate(289deg) brightness(121%) contr
 
 .left{
     position: absolute;    /*setting all elements for the left side to stretch to the box height & correct position*/
-    top:calc(0.5 *(var(--border)));
+    top:calc(-0.5 *(var(--border)));
     height: var(--boxHeight); 
-    left:calc(0.5 *(var(--border)));
+    left:calc(-0.5 *(var(--border)));
 }
 .right{
     position: absolute;    /*setting all elements for the right side to stretch to the box height & correct position*/
-    top:calc(0.5 *(var(--border)));
+    top:calc(-0.5 *(var(--border)));
     height: var(--boxHeight); 
-    right:calc(0.5 *(var(--border)));
+    right:calc(-0.5 *(var(--border)));
 
     
 }
 
 .bottom{
     position: absolute;
-    bottom: calc(-0.4 *(var(--border)));
+    bottom: calc(-0.6 *(var(--border)));
     width: var(--boxWidth);
     left: 0;
     max-height: calc(0.8*(var(--boxHeight)));
