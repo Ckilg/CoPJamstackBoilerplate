@@ -79,11 +79,14 @@ invert(18%) sepia(98%) saturate(2657%) hue-rotate(289deg) brightness(121%) contr
     z-index: 8;
 }
 @media only screen and (max-width: 600px) {
+    .left, .right{
+        top:calc(-1 *(var(--border)));
+    }
     .left{
         left:calc(-1 *(var(--border)));
    }
    .right{
-    right:calc(-1 *(var(--border)));
+    right:calc(-1.2 *(var(--border)));
 }
 .layer1.left{
     left:calc(-1 *(var(--border)));
